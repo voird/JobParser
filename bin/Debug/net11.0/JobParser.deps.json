@@ -1,0 +1,215 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v11.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v11.0": {
+      "JobParser/1.0.0": {
+        "dependencies": {
+          "HtmlAgilityPack": "1.11.71",
+          "ScrapySharp": "3.0.0"
+        },
+        "runtime": {
+          "JobParser.dll": {}
+        }
+      },
+      "FSharp.Core/4.5.2": {
+        "runtime": {
+          "lib/netstandard1.6/FSharp.Core.dll": {
+            "assemblyVersion": "4.5.0.0",
+            "fileVersion": "2018.7.27.2",
+            "localPath": "FSharp.Core.dll"
+          }
+        },
+        "resources": {
+          "lib/netstandard1.6/cs/FSharp.Core.resources.dll": {
+            "locale": "cs",
+            "localPath": "cs/FSharp.Core.resources.dll"
+          },
+          "lib/netstandard1.6/de/FSharp.Core.resources.dll": {
+            "locale": "de",
+            "localPath": "de/FSharp.Core.resources.dll"
+          },
+          "lib/netstandard1.6/en/FSharp.Core.resources.dll": {
+            "locale": "en",
+            "localPath": "en/FSharp.Core.resources.dll"
+          },
+          "lib/netstandard1.6/es/FSharp.Core.resources.dll": {
+            "locale": "es",
+            "localPath": "es/FSharp.Core.resources.dll"
+          },
+          "lib/netstandard1.6/fr/FSharp.Core.resources.dll": {
+            "locale": "fr",
+            "localPath": "fr/FSharp.Core.resources.dll"
+          },
+          "lib/netstandard1.6/it/FSharp.Core.resources.dll": {
+            "locale": "it",
+            "localPath": "it/FSharp.Core.resources.dll"
+          },
+          "lib/netstandard1.6/ja/FSharp.Core.resources.dll": {
+            "locale": "ja",
+            "localPath": "ja/FSharp.Core.resources.dll"
+          },
+          "lib/netstandard1.6/ko/FSharp.Core.resources.dll": {
+            "locale": "ko",
+            "localPath": "ko/FSharp.Core.resources.dll"
+          },
+          "lib/netstandard1.6/pl/FSharp.Core.resources.dll": {
+            "locale": "pl",
+            "localPath": "pl/FSharp.Core.resources.dll"
+          },
+          "lib/netstandard1.6/pt-BR/FSharp.Core.resources.dll": {
+            "locale": "pt-BR",
+            "localPath": "pt-BR/FSharp.Core.resources.dll"
+          },
+          "lib/netstandard1.6/ru/FSharp.Core.resources.dll": {
+            "locale": "ru",
+            "localPath": "ru/FSharp.Core.resources.dll"
+          },
+          "lib/netstandard1.6/tr/FSharp.Core.resources.dll": {
+            "locale": "tr",
+            "localPath": "tr/FSharp.Core.resources.dll"
+          },
+          "lib/netstandard1.6/zh-Hans/FSharp.Core.resources.dll": {
+            "locale": "zh-Hans",
+            "localPath": "zh-Hans/FSharp.Core.resources.dll"
+          },
+          "lib/netstandard1.6/zh-Hant/FSharp.Core.resources.dll": {
+            "locale": "zh-Hant",
+            "localPath": "zh-Hant/FSharp.Core.resources.dll"
+          }
+        }
+      },
+      "HtmlAgilityPack/1.11.71": {
+        "runtime": {
+          "lib/netstandard2.0/HtmlAgilityPack.dll": {
+            "assemblyVersion": "1.11.71.0",
+            "fileVersion": "1.11.71.0",
+            "localPath": "HtmlAgilityPack.dll"
+          }
+        }
+      },
+      "ScrapySharp/3.0.0": {
+        "dependencies": {
+          "FSharp.Core": "4.5.2",
+          "HtmlAgilityPack": "1.11.71",
+          "System.Runtime.Caching": "4.5.0-preview1-26216-02"
+        },
+        "runtime": {
+          "lib/netstandard2.0/ScrapySharp.Core.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "0.0.0.0",
+            "localPath": "ScrapySharp.Core.dll"
+          },
+          "lib/netstandard2.0/ScrapySharp.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0",
+            "localPath": "ScrapySharp.dll"
+          }
+        }
+      },
+      "System.Configuration.ConfigurationManager/4.5.0-preview1-26216-02": {
+        "dependencies": {
+          "System.Security.Cryptography.ProtectedData": "4.5.0-preview1-26216-02"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Configuration.ConfigurationManager.dll": {
+            "assemblyVersion": "4.0.1.0",
+            "fileVersion": "4.6.26216.2",
+            "localPath": "System.Configuration.ConfigurationManager.dll"
+          }
+        }
+      },
+      "System.Runtime.Caching/4.5.0-preview1-26216-02": {
+        "dependencies": {
+          "System.Configuration.ConfigurationManager": "4.5.0-preview1-26216-02"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Runtime.Caching.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.6.26216.2",
+            "localPath": "System.Runtime.Caching.dll"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netcoreapp2.0/System.Runtime.Caching.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.6.26216.2",
+            "localPath": "runtimes/win/lib/netcoreapp2.0/System.Runtime.Caching.dll"
+          }
+        }
+      },
+      "System.Security.Cryptography.ProtectedData/4.5.0-preview1-26216-02": {
+        "runtime": {
+          "lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll": {
+            "assemblyVersion": "4.0.3.0",
+            "fileVersion": "4.6.26216.2",
+            "localPath": "System.Security.Cryptography.ProtectedData.dll"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "4.0.3.0",
+            "fileVersion": "4.6.26216.2",
+            "localPath": "runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "JobParser/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FSharp.Core/4.5.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-apbdQOjzsjQ637kTWQuW29jqwY18jsHMyNC5A+TPJZKFEIE2cIfQWf3V7+mXrxlbX69BueYkv293/g70wuXuRw==",
+      "path": "fsharp.core/4.5.2",
+      "hashPath": "fsharp.core.4.5.2.nupkg.sha512"
+    },
+    "HtmlAgilityPack/1.11.71": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HlEThQBnob4/29DIiyrPSYlGXXSZUtOH7571PRev+yu8FW8n5pdxqHyun+PMm17cp3ovCrxFhXedC+1HUSdRMA==",
+      "path": "htmlagilitypack/1.11.71",
+      "hashPath": "htmlagilitypack.1.11.71.nupkg.sha512"
+    },
+    "ScrapySharp/3.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qwOe4oPAFPgFP5pi9aMHo5I66Pw8EYiY93k/FQvHs3P0vgt/cnjsgMuoc6pxYXrxVbBdKSqPTkem1D4iktjHNQ==",
+      "path": "scrapysharp/3.0.0",
+      "hashPath": "scrapysharp.3.0.0.nupkg.sha512"
+    },
+    "System.Configuration.ConfigurationManager/4.5.0-preview1-26216-02": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-65gtuVIbMzoF+CVESInLHcVVMwxvfrE2ve0EMw4Oe5Dqe3o+ylUOZwfaB/5rEdLPbHBp6AWAdi9kcSp6TD+A3w==",
+      "path": "system.configuration.configurationmanager/4.5.0-preview1-26216-02",
+      "hashPath": "system.configuration.configurationmanager.4.5.0-preview1-26216-02.nupkg.sha512"
+    },
+    "System.Runtime.Caching/4.5.0-preview1-26216-02": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-IRlmpGTFx3HpFnBNIzrKgKM75bYMIITTBzvDOB5v/fNq/0N5P1qgOuEYfWJwcVGdSs5MFNVKmxHtj59SIxZNVg==",
+      "path": "system.runtime.caching/4.5.0-preview1-26216-02",
+      "hashPath": "system.runtime.caching.4.5.0-preview1-26216-02.nupkg.sha512"
+    },
+    "System.Security.Cryptography.ProtectedData/4.5.0-preview1-26216-02": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2IoO3tOqbhQkiPpKPTBrm9buQg0ft4xO6VtV3eKwdNaIxTwfa8kiH66jV+dYZ4fpnm7flYFlUNenoz7HZK4uyA==",
+      "path": "system.security.cryptography.protecteddata/4.5.0-preview1-26216-02",
+      "hashPath": "system.security.cryptography.protecteddata.4.5.0-preview1-26216-02.nupkg.sha512"
+    }
+  }
+}

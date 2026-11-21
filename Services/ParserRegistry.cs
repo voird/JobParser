@@ -1,0 +1,2 @@
+using JobParser.Configuration; using JobParser.Parsers; namespace JobParser.Services;
+public sealed class ParserRegistry { readonly IReadOnlyList<IVacancyParser> parsers; public ParserRegistry(IHttpClientFactory f){var list=new List<IVacancyParser>(); foreach(var s in SiteConfig.All.Values){list.Add(new HttpClientVacancyParser(f,s));list.Add(new ScrapySharpVacancyParser(f,s));}parsers=list;} public IReadOnlyList<IVacancyParser> All=>parsers; public IVacancyParser? Find(string id)=>parsers.FirstOrDefault(p=>p.Id.Equals(id,StringComparison.OrdinalIgnoreCase)); }
