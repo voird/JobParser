@@ -1,0 +1,1 @@
+using JobParser.Models; namespace JobParser.Parsers; public interface IVacancyParser { string Id{get;} string SiteKey{get;} string SiteName{get;} string Method{get;} Task<IReadOnlyList<Vacancy>> ParseAsync(CancellationToken cancellationToken=default); }

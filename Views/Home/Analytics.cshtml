@@ -1,0 +1,38 @@
+@model JobParser.Models.AnalyticsViewModel
+@using System.Text.Json
+<section class="hero"><div><small>АНАЛИТИКА РЫНКА</small><h1>Аналитическая панель</h1><p>Статистика по собранным вакансиям из CSV-хранилища</p></div><a class="secondary linkbtn" asp-action="Index">← К вакансиям</a></section>
+<section class="stats">
+ <div><span>Всего вакансий</span><strong>@Model.Total</strong></div>
+ <div><span>С указанием компании</span><strong>@Model.WithCompany</strong></div>
+ <div><span>С указанной зарплатой</span><strong>@Model.WithSalary</strong></div>
+</section>
+@if(Model.Total==0){<div class="notice">Пока нет данных для анализа. Сначала запусти парсеры и собери вакансии.</div>}
+<section class="charts">
+ <article class="panel chartpanel"><h2>Распределение по профессиям</h2><p class="muted">Круговая диаграмма количества вакансий</p><div class="chartbox"><canvas id="professionChart"></canvas></div></article>
+ <article class="panel chartpanel"><h2>Компании с наибольшим числом вакансий</h2><p class="muted">Топ-10 работодателей по количеству объявлений</p>
+ @if(Model.CompanyLabels.Length==0){<div class="chart-empty">Нет данных о компаниях. Парсер пока не извлекает название работодателя со страниц вакансий.</div>}else{<div class="chartbox"><canvas id="companyChart"></canvas></div>}
+ </article>
+ <article class="panel chartpanel wide"><h2>Вакансии по регионам</h2><p class="muted">Топ регионов и городов, определённых по карточкам и страницам вакансий</p>
+ @if(Model.RegionLabels.Length==0){<div class="chart-empty">Регион пока не извлечён ни у одной вакансии.</div>}else{<div class="chartbox"><canvas id="regionChart"></canvas></div>}
+ </article>
+ <article class="panel chartpanel wide"><h2>Распределение зарплат</h2><p class="muted">Группировка зарплат в рублях; объявления без указанной суммы не учитываются</p>
+ @if(Model.WithSalary==0){<div class="chart-empty">В CSV пока нет ни одной указанной зарплаты. Диаграмма заполнится после успешного извлечения зарплат со страниц вакансий.</div>}else{<div class="chartbox"><canvas id="salaryChart"></canvas></div>}
+ </article>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+const professions = @Html.Raw(JsonSerializer.Serialize(Model.ProfessionLabels));
+const professionCounts = @Html.Raw(JsonSerializer.Serialize(Model.ProfessionCounts));
+const companyLabels = @Html.Raw(JsonSerializer.Serialize(Model.CompanyLabels));
+const companyCounts = @Html.Raw(JsonSerializer.Serialize(Model.CompanyCounts));
+const salaryLabels = @Html.Raw(JsonSerializer.Serialize(Model.SalaryLabels));
+const salaryCounts = @Html.Raw(JsonSerializer.Serialize(Model.SalaryCounts));
+const regionLabels = @Html.Raw(JsonSerializer.Serialize(Model.RegionLabels));
+const regionCounts = @Html.Raw(JsonSerializer.Serialize(Model.RegionCounts));
+if (window.Chart) {
+ new Chart(document.getElementById('professionChart'), {type:'doughnut',data:{labels:professions,datasets:[{data:professionCounts,backgroundColor:['#8d80ff','#40c6b5','#f3b65d']}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:'#cbd5e5'}}}}});
+ if(document.getElementById('companyChart')) new Chart(document.getElementById('companyChart'),{type:'bar',data:{labels:companyLabels,datasets:[{label:'Вакансий',data:companyCounts,backgroundColor:'#40c6b5',borderRadius:6}]},options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,scales:{x:{ticks:{color:'#91a0b8'},grid:{color:'#293750'}},y:{ticks:{color:'#cbd5e5'},grid:{display:false}}},plugins:{legend:{display:false}}}});
+ if(document.getElementById('regionChart')) new Chart(document.getElementById('regionChart'),{type:'bar',data:{labels:regionLabels,datasets:[{label:'Вакансий',data:regionCounts,backgroundColor:'#8d80ff',borderRadius:6}]},options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,scales:{x:{beginAtZero:true,ticks:{color:'#91a0b8',precision:0}},y:{ticks:{color:'#cbd5e5'},grid:{display:false}}},plugins:{legend:{display:false}}}});
+ if(document.getElementById('salaryChart')) new Chart(document.getElementById('salaryChart'),{type:'line',data:{labels:salaryLabels,datasets:[{label:'Вакансий',data:salaryCounts,borderColor:'#a195ff',backgroundColor:'rgba(161,149,255,.16)',fill:true,tension:.35,pointRadius:5}]},options:{responsive:true,maintainAspectRatio:false,scales:{x:{ticks:{color:'#cbd5e5'},grid:{display:false}},y:{beginAtZero:true,ticks:{color:'#91a0b8',precision:0},grid:{color:'#293750'}}},plugins:{legend:{display:false}}}});
+}
+</script>
